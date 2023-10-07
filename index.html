@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./Assests/Images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- locomotive css link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <!-- remix css link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- custom css link  -->
+    <link rel="stylesheet" href="./CSS/stye.css" />
+    <!-- responsive css link  -->
+    <link rel="stylesheet" href="./CSS/responsive.css" />
+    <title>Nikhil Sai Portfolio</title>
+  </head>
+  <body>
+    <div id="cursor">
+      <div id="inner-cursor"></div>
+    </div>
+    <div id="main">
+      <nav class="nav" id="nav">
+        <div class="logo">
+          <h1>nikhil</h1>
+          <h1>sai</h1>
+        </div>
+        <ul class="nav-links hide">
+          <li>
+            <a href="#"><span>1.</span> home</a>
+          </li>
+          <li>
+            <a href="#"><span>2.</span> about me</a>
+          </li>
+          <li>
+            <a href="#"><span>3.</span> my projects</a>
+          </li>
+          <li>
+            <a href=""><span>4.</span> my skills</a>
+          </li>
+          <li>
+            <a href="#"><span>5.</span> challenges</a>
+          </li>
+          <li>
+            <a href="#"><span>6.</span> contact me</a>
+          </li>
+        </ul>
+        <div class="right-nav">
+          <button class="resume-btn">
+            <h1>resume</h1>
+            <i class="ri-download-2-line"></i>
+          </button>
+
+          <div id="hamburger" onclick="navHandler()">
+            <i class="ri-bar-chart-horizontal-line"></i>
+          </div>
+        </div>
+      </nav>
+      <section id="hero-section" class="hero-section">
+        <h2>front-end</h2>
+        <h2>developer</h2>
+        <img src="./Assests/Images/dev-1.png" alt="" class="hero-img" />
+      </section>
+      <section id="about-section" class="about-section padding">
+        <h2>about me</h2>
+        <div class="content">
+          <div class="line"></div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+            error similique distinctio amet voluptatem perferendis, sint
+            recusandae deleniti sunt repellat maiores, quo expedita praesentium
+            explicabo quia hic laudantium quibusdam? Quibusdam, possimus
+            reiciendis? <span> Provident ullam optio vitae cum,</span> officia
+            veniam numquam quasi dolores. Unde labore fugit, ipsum sapiente
+            voluptatum molestiae quos reprehenderit. Alias dolore molestias,
+            excepturi possimus facere ab laboriosam quos.
+          </p>
+          
+        </div>
+        <div class="about-section-buttons">
+          <button class="resume">
+            <h1>resume</h1>
+            <i class="ri-download-2-line"></i>
+          </button>
+          <button class="contact-me-btn">
+            <h1>contact me</h1>
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </div>
+      </section>
+      <section id="skills-section" class="skills-section padding">
+        <h2 class="section-title">my skills</h2>
+        <div class="skills-container">
+          <!-- <div class="skill">
+            <div class="skill-img-container">
+              <img src="./Assests/Images/Logos/html.png" alt="">
+            </div>
+            <h5>html</h5>
+          </div> -->
+        </div>
+      </section>
+      <section id="projects-section" class="projects-section padding">
+        <h2 class="section-title">projects</h2>
+        <div class="projects-container">
+          <!-- <div class="project">
+            <div class="project-details">
+              <h2 class="project-name">project 1</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+                mollitia aspernatur repellendus optio praesentium excepturi. Aut
+                modi nihil laudantium rem?
+              </p>
+              <div class="btns-div">
+                <a href="#" class="live-btn" target="_blank"><i class="ri-share-box-fill"></i></a>
+                <a href="#" class="git-btn" target="_blank"><i class="ri-github-fill"></i></a>
+              </div>
+            </div>
+            <div class="project-img">
+              <img
+                src="https://www.projectmanager.com/wp-content/uploads/2021/10/211014_Blog_Feature_Project_Environment-scaled.jpg"
+                alt=""
+              />
+            </div>
+          </div> -->
+        </div>
+      </section>
+      <section id="challanges-section" class="challenges-section padding">
+        <h2 class="section-title">challenges..!</h2>
+        <div class="challenges-container">
+          <div class="left-challenges">
+            <h2>30Days30Projects</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+              nam inventore reprehenderit quam repellendus sequi. Minima earum
+              voluptates itaque consequuntur similique aspernatur ducimus
+              molestiae sunt cumque accusamus, velit eaque laudantium facilis,
+              nobis, magni accusantium sint quaerat iste. Excepturi error totam
+              possimus, velit harum facilis sed blanditiis sint numquam quod
+              repellendus!
+            </p>
+            <button>explore</button>
+          </div>
+          <div class="right-challenges">
+            <img
+              src="./Assests/Images/dev-2.png"
+              class="challenges-img"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section class="contact-section padding" id="contact-section">
+        <h2 class="section-title">contact me</h2>
+        <form>
+          <input type="text" placeholder="enter your name" id="user-name" />
+          <input type="email" placeholder="enter your email" id="user-email" />
+          <textarea
+            id="user-message"
+            placeholder="enter message here..!"
+          ></textarea>
+          <button type="submit" class="send-btn">send message</button>
+        </form>
+      </section>
+      <section class="icons-section padding" id="icons-section">
+        <div class="icons">
+          <div class="icon">
+            <i class="ri-github-fill"></i>
+          </div>
+          <div class="icon">
+            <i class="ri-linkedin-box-fill"></i>
+          </div>
+          <div class="icon">
+            <i class="ri-twitter-fill"></i>
+          </div>
+        </div>
+        <ul class="nav-links hide">
+          <li>
+            <a href="#"><span>1.</span> home</a>
+          </li>
+          <li>
+            <a href="#"><span>2.</span> about me</a>
+          </li>
+          <li>
+            <a href="#"><span>3.</span> my projects</a>
+          </li>
+          <li>
+            <a href=""><span>4.</span> my skills</a>
+          </li>
+          <li>
+            <a href="#"><span>5.</span> challenges</a>
+          </li>
+          <li>
+            <a href="#"><span>6.</span> contact me</a>
+          </li>
+        </ul> 
+      </section>
+      <footer class="footer-section padding" id="footer-section">
+       <h2> &copy; nikhil sai ankilla</h2>
+      </footer>
+    </div>
+    <!-- locomotive js link  -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <!-- gsap js link  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- gsap scroll trigger link  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- custom js link  -->
+    <script src="script.js"></script>
+  </body>
+</html>

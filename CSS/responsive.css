@@ -1,0 +1,44 @@
+@media (max-width: 600px)    {
+  #nav .logo h1 {
+    font-size: 5vw;
+  }
+  #hamburger i {
+    font-size: 4vw;
+    color: #fff;
+  }
+  
+.nav-links li a {
+    font-size: 7vw;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3vw 5vw;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--text-color);
+    transition: all 0.6s ease-in-out;
+  }
+  .nav-links.hide {
+    top: -800%;
+  }
+  .nav-links li {
+    margin-bottom: 2vw;
+  }
+  .nav-links li a {
+    font-size: 3vw;
+    color: var(--white-color);
+  }
+  .nav-links li a span {
+    color: var(--black-color);
+  }
+  .right-nav .resume-btn {
+    display: none;
+  }
+  .right-nav #hamburger {
+    display: block;
+  }
+}
