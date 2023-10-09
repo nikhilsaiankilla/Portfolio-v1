@@ -160,7 +160,7 @@ button {
 #hamburger {
   display: none;
   position: relative;
-  z-index: 99;
+  z-index: 699;
 }
 
 #hamburger i {
@@ -286,10 +286,11 @@ button {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in;
 }
 .skill:hover {
   background-color: var(--text-color);
+  /* transform: rotateY(360deg); */
 }
 .skill-img-container {
   width: 100%;
@@ -465,14 +466,14 @@ button {
   height: 100%;
   position: absolute;
   bottom: -20px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* constact section styling  */
 
 .contact-section {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   position: relative;
   display: flex;
   align-items: center;
@@ -497,7 +498,7 @@ button {
   width: 100%;
   padding: 10px 15px;
   font-size: 1vw;
-  margin-bottom: 0.7vw;
+  margin-bottom: 1.7vw;
   border: 0;
   outline: 0;
   box-shadow: 1px 1px 2px 2px rgba(255, 200, 107, 0.1);
@@ -518,6 +519,7 @@ button {
 }
 
 .contact-section .send-btn {
+  margin-top: 1vw;
   width: 100%;
   padding: 10px 15px;
   font-size: 1.2vw;

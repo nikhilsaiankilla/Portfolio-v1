@@ -105,9 +105,13 @@ heroImgResponseAnimation();
 
 function cursorAnimations() {
   let cursor = document.getElementById("cursor");
-
-  document.addEventListener("mouseenter", () => {
+  cursor.style.display = "none"
+  document.addEventListener("mouseenter", (dets) => {
     cursor.style.display = "flex";
+    gsap.to("#cursor", {
+      x: dets.x,
+      y: dets.y,
+    });
   });
 
   document.addEventListener("mousemove", (dets) => {
@@ -117,8 +121,12 @@ function cursorAnimations() {
     });
   });
 
-  document.addEventListener("mouseleave", () => {
+  document.addEventListener("mouseleave", (dets) => {
     cursor.style.display = "none";
+    gsap.to("#cursor", {
+      x: dets.x,
+      y: dets.y,
+    });
   });
 }
 cursorAnimations();
