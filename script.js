@@ -131,6 +131,16 @@ function cursorAnimations() {
 }
 cursorAnimations();
 
+function loadingScreenAnimation(){
+  window.addEventListener("load",()=>{
+    let loader = document.getElementById("loader-screen")
+  
+    loader.classList.add("hide-loader")
+  })
+}
+
+loadingScreenAnimation()
+
 
 let skillsData = [
   {
@@ -280,3 +290,4 @@ projectsData.forEach(project => {
 
     projectsContainer.appendChild(projectCard)
 })
+
