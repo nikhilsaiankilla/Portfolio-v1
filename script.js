@@ -1,5 +1,3 @@
-// import { skillsData } from "./data";
-
 function loco() {
   gsap.registerPlugin(ScrollTrigger);
   const locoScroll = new LocomotiveScroll({
@@ -40,7 +38,7 @@ function animations() {
     y: -100,
     duration: 0.5,
     opacity: 0,
-    delay: 0.5,
+    // delay: 0.5,
     stagger: 0.3,
   });
 
@@ -105,7 +103,7 @@ heroImgResponseAnimation();
 
 function cursorAnimations() {
   let cursor = document.getElementById("cursor");
-  cursor.style.display = "none"
+  cursor.style.display = "none";
   document.addEventListener("mouseenter", (dets) => {
     cursor.style.display = "flex";
     gsap.to("#cursor", {
@@ -131,17 +129,16 @@ function cursorAnimations() {
 }
 cursorAnimations();
 
-function loadingScreenAnimation(){
-  window.addEventListener("load",()=>{
-    let loader = document.getElementById("loader-screen")
-  
-    loader.classList.add("hide-loader")
-  })
+function loadingScreenAnimation() {
+  window.addEventListener("load", () => {
+    let loader = document.getElementById("loader-screen");
+
+    loader.classList.add("hide-loader");
+  });
 }
+loadingScreenAnimation();
 
-loadingScreenAnimation()
-
-
+// storing skills data dynamically 
 let skillsData = [
   {
     id: 0,
@@ -175,42 +172,43 @@ let skillsData = [
   },
 ];
 
+// storing projects data dynamically
 let projectsData = [
-    {
-      id:0,
-      projectImg:"./Assests/Images/dev-2.png",
-      projectName:"Project Name",
-      projectDesc:`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+  {
+    id: 0,
+    projectImg: "./Assests/Images/dev-2.png",
+    projectName: "Project Name",
+    projectDesc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
       mollitia aspernatur repellendus optio praesentium excepturi. Aut
       modi nihil laudantium rem?`,
-      projectLiveLink:"https://github.com/nikhilsaiankilla",
-      projectGithubLink:"https://github.com/nikhilsaiankilla"
-    },
-    {
-      id:1,
-      projectImg:"./Assests/Images/dev-3.png",
-      projectName:"Project Name",
-      projectDesc:`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+    projectLiveLink: "https://github.com/nikhilsaiankilla",
+    projectGithubLink: "https://github.com/nikhilsaiankilla",
+  },
+  {
+    id: 1,
+    projectImg: "./Assests/Images/dev-3.png",
+    projectName: "Project Name",
+    projectDesc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
       mollitia aspernatur repellendus optio praesentium excepturi. Aut
       modi nihil laudantium rem?`,
-      projectLiveLink:"https://github.com/nikhilsaiankilla",
-      projectGithubLink:"https://github.com/nikhilsaiankilla"
-    },
-    {
-      id:2,
-      projectImg:"./Assests/Images/dev-1.png",
-      projectName:"Project Name",
-      projectDesc:`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+    projectLiveLink: "https://github.com/nikhilsaiankilla",
+    projectGithubLink: "https://github.com/nikhilsaiankilla",
+  },
+  {
+    id: 2,
+    projectImg: "./Assests/Images/dev-1.png",
+    projectName: "Project Name",
+    projectDesc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
       mollitia aspernatur repellendus optio praesentium excepturi. Aut
       modi nihil laudantium rem?`,
-      projectLiveLink:"https://github.com/nikhilsaiankilla",
-      projectGithubLink:"https://github.com/nikhilsaiankilla"
-    },
-]
-
+    projectLiveLink: "https://github.com/nikhilsaiankilla",
+    projectGithubLink: "https://github.com/nikhilsaiankilla",
+  },
+];
 
 let skillsContainer = document.querySelector(".skills-container");
 
+// showing skills dynalically
 skillsData.forEach((skill) => {
   let skillbox = document.createElement("div");
   skillbox.classList.add("skill");
@@ -233,61 +231,117 @@ skillsData.forEach((skill) => {
   skillsContainer.appendChild(skillbox);
 });
 
-let projectsContainer = document.querySelector(".projects-container")
+let projectsContainer = document.querySelector(".projects-container");
 
-projectsData.forEach(project => {
-    let projectCard = document.createElement("div")
-    projectCard.classList.add("project")
+// showing the projects dynalically 
+projectsData.forEach((project) => {
+  let projectCard = document.createElement("div");
+  projectCard.classList.add("project");
 
-    let projectDetailsCard = document.createElement("div")
-    projectDetailsCard.classList.add("project-details")
+  let projectDetailsCard = document.createElement("div");
+  projectDetailsCard.classList.add("project-details");
 
-    let projectTitle = document.createElement("h2")
-    projectTitle.classList.add("project-name")
-    projectTitle.innerText = project.projectName;
+  let projectTitle = document.createElement("h2");
+  projectTitle.classList.add("project-name");
+  projectTitle.innerText = project.projectName;
 
-    let projectDesc = document.createElement("p")
-    projectDesc.innerText = project.projectDesc;
+  let projectDesc = document.createElement("p");
+  projectDesc.innerText = project.projectDesc;
 
-    projectDetailsCard.appendChild(projectTitle)
+  projectDetailsCard.appendChild(projectTitle);
 
-    projectDetailsCard.appendChild(projectDesc)
+  projectDetailsCard.appendChild(projectDesc);
 
-    let buttonsDiv = document.createElement("div")
-    buttonsDiv.classList.add("btns-div")
+  let buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("btns-div");
 
-    let liveLink = document.createElement("a")
-    liveLink.classList.add("live-btn")
-    liveLink.href = project.projectLiveLink;
-    liveLink.target = "_blank"
+  let liveLink = document.createElement("a");
+  liveLink.classList.add("live-btn");
+  liveLink.href = project.projectLiveLink;
+  liveLink.target = "_blank";
 
-    liveLink.innerHTML = `<i class="ri-share-box-fill"></i>`
+  liveLink.innerHTML = `<i class="ri-share-box-fill"></i>`;
 
-    let githubLink = document.createElement("a")
-    githubLink.classList.add("git-btn")
-    githubLink.href = project.projectLiveLink;
-    githubLink.target = "_blank"
+  let githubLink = document.createElement("a");
+  githubLink.classList.add("git-btn");
+  githubLink.href = project.projectLiveLink;
+  githubLink.target = "_blank";
 
-    githubLink.innerHTML = `<i class="ri-github-fill"></i>`
+  githubLink.innerHTML = `<i class="ri-github-fill"></i>`;
 
-    buttonsDiv.appendChild(liveLink)
-    buttonsDiv.appendChild(githubLink)
+  buttonsDiv.appendChild(liveLink);
+  buttonsDiv.appendChild(githubLink);
 
-    projectDetailsCard.appendChild(buttonsDiv)
+  projectDetailsCard.appendChild(buttonsDiv);
 
-    projectCard.appendChild(projectDetailsCard)
+  projectCard.appendChild(projectDetailsCard);
 
-    let projectImageCard = document.createElement("div")
-    projectImageCard.classList.add("project-img")
+  let projectImageCard = document.createElement("div");
+  projectImageCard.classList.add("project-img");
 
-    let projectImg = document.createElement("img")
+  let projectImg = document.createElement("img");
 
-    projectImg.src = project.projectImg;
+  projectImg.src = project.projectImg;
 
-    projectImageCard.appendChild(projectImg)
+  projectImageCard.appendChild(projectImg);
 
-    projectCard.appendChild(projectImageCard)
+  projectCard.appendChild(projectImageCard);
 
-    projectsContainer.appendChild(projectCard)
+  projectsContainer.appendChild(projectCard);
+});
+
+
+let feedback = document.querySelector(".feedback");
+let submitBtn = document.querySelector(".send-btn")
+
+// handles the username 
+function userNameHandler(name) {
+  if (name.value.length == 0) {
+    return false;
+  }
+  return true;
+}
+
+// handles the user email 
+function userEmailHandler(email) {
+  if (email.value.length == 0) {
+    return false;
+  }
+  if (!email.value.includes("@")) {
+    return false;
+  }
+  return true;
+}
+
+// handles the user message 
+function userMessageHandler(message) {
+  if (message.value.length == 0) {
+    return false;
+  }
+  return true;
+}
+
+// constact form handler 
+function handleContactForm() {
+  let userName = document.getElementById("user-name");
+  let userEmail = document.getElementById("user-email");
+  let userMessage = document.getElementById("user-message");
+
+  if(userNameHandler(userName) && userEmailHandler(userEmail) && userMessageHandler(userMessage)){
+    feedback.style.color = "green"
+    feedback.innerHTML = "sent successfully....!"
+  }else{
+    feedback.style.color = "red"
+    feedback.innerHTML = "failed to send please checkout the details."
+  }
+
+  setTimeout(()=>{
+    feedback.innerHTML = " "
+  },3000)
+}
+
+// reacts on the form submition 
+submitBtn.addEventListener("click",(event) => {
+  event.preventDefault();
+  handleContactForm()
 })
-

@@ -1,4 +1,7 @@
 @media (max-width: 600px) {
+  #cursor{
+    scale: 0;
+  }
   .section-title {
     font-size: 8vw;
   }
@@ -48,7 +51,7 @@
   .hero-img {
     width: 85vw;
     height: 70vw;
-    bottom: -10px;
+    bottom: 0%;
   }
   .about-section h2 {
     font-size: 10vw;
