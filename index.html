@@ -92,7 +92,6 @@
             voluptatum molestiae quos reprehenderit. Alias dolore molestias,
             excepturi possimus facere ab laboriosam quos.
           </p>
-          
         </div>
         <div class="about-section-buttons">
           <button class="resume">
@@ -168,11 +167,22 @@
       </section>
       <section class="contact-section padding" id="contact-section">
         <h2 class="section-title">contact me</h2>
-        <form> 
-          <input type="text" placeholder="enter your name" id="user-name" />
-          <input type="email" placeholder="enter your email" id="user-email" />
+        <form name="submit-to-google-sheet">
+          <input
+            type="text"
+            name="user-name"
+            placeholder="enter your name"
+            id="user-name"
+          />
+          <input
+            type="email"
+            name="user-email"
+            placeholder="enter your email"
+            id="user-email"
+          />
           <textarea
             id="user-message"
+            name="user-msg"
             placeholder="enter message here..!"
           ></textarea>
           <button type="submit" class="send-btn">send message</button>
@@ -194,7 +204,7 @@
         <p>nikhilsaiankilla@gmail.com</p>
       </section>
       <footer class="footer-section padding" id="footer-section">
-       <h2> &copy; nikhil sai ankilla</h2>
+        <h2>&copy; nikhil sai ankilla</h2>
       </footer>
     </div>
     <!-- locomotive js link  -->
@@ -213,7 +223,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
     <!-- custom js link  -->
     <script src="script.js"></script>
+
+    <script>
+      
+    </script>
   </body>
 </html>

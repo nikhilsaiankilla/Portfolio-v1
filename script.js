@@ -138,7 +138,7 @@ function loadingScreenAnimation() {
 }
 loadingScreenAnimation();
 
-// storing skills data dynamically 
+// storing skills data dynamically
 let skillsData = [
   {
     id: 0,
@@ -233,7 +233,7 @@ skillsData.forEach((skill) => {
 
 let projectsContainer = document.querySelector(".projects-container");
 
-// showing the projects dynalically 
+// showing the projects dynalically
 projectsData.forEach((project) => {
   let projectCard = document.createElement("div");
   projectCard.classList.add("project");
@@ -290,58 +290,73 @@ projectsData.forEach((project) => {
   projectsContainer.appendChild(projectCard);
 });
 
-
 let feedback = document.querySelector(".feedback");
-let submitBtn = document.querySelector(".send-btn")
+let submitBtn = document.querySelector(".send-btn");
 
-// handles the username 
-function userNameHandler(name) {
-  if (name.value.length == 0) {
+// handles the username
+function userNameHandler() {
+  let userName = document.getElementById("user-name").value;
+  if (userName.length == 0) {
     return false;
   }
   return true;
 }
 
-// handles the user email 
-function userEmailHandler(email) {
-  if (email.value.length == 0) {
+// handles the user email
+function userEmailHandler() {
+  let userEmail = document.getElementById("user-email").value;
+  if (userEmail.length == 0) {
     return false;
   }
-  if (!email.value.includes("@")) {
+  if (!userEmail.includes("@")) {
     return false;
   }
   return true;
 }
 
-// handles the user message 
+// handles the user message
 function userMessageHandler(message) {
-  if (message.value.length == 0) {
+  let userMessage = document.getElementById("user-message").value;
+  if (userMessage.length == 0) {
     return false;
   }
   return true;
 }
 
-// constact form handler 
-function handleContactForm() {
-  let userName = document.getElementById("user-name");
-  let userEmail = document.getElementById("user-email");
-  let userMessage = document.getElementById("user-message");
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbx891t2zPkwOfhPhk9nOC_-UmR6ovGXg_IpMXszmsdjKWZ3eVC3evf9CWUgFhqrkpH-mw/exec";
+const form = document.forms["submit-to-google-sheet"];
 
-  if(userNameHandler(userName) && userEmailHandler(userEmail) && userMessageHandler(userMessage)){
-    feedback.style.color = "green"
-    feedback.innerHTML = "sent successfully....!"
-  }else{
-    feedback.style.color = "red"
-    feedback.innerHTML = "failed to send please checkout the details."
+// exexutes on form submit 
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (!userNameHandler() || !userEmailHandler() || !userMessageHandler()) {
+    feedback.style.color = "red";
+    feedback.innerHTML = "failed to send please checkout the details.";
+
+    setTimeout(() => {
+      feedback.innerHTML = " ";
+    }, 3000);
+
+  } else {
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        feedback.style.color = "green";
+        feedback.innerHTML = "sent successfully....!";
+
+        setTimeout(() => {
+          feedback.innerHTML = " ";
+        }, 3000);
+      })
+      .catch((error) => {
+        feedback.style.color = "red";
+        feedback.innerHTML = "failed to send please try again..!";
+
+        setTimeout(() => {
+          feedback.innerHTML = " ";
+        }, 3000);
+      });
   }
-
-  setTimeout(()=>{
-    feedback.innerHTML = " "
-  },3000)
-}
-
-// reacts on the form submition 
-submitBtn.addEventListener("click",(event) => {
-  event.preventDefault();
-  handleContactForm()
-})
+});
