@@ -192,6 +192,18 @@ button {
   line-height: 15vw;
   user-select: none;
 }
+.hero-section h4 {
+  position: absolute;
+  /* left: 50%; */
+  top: 50%;
+  transform: translate(-50%,0%);
+  text-align: left;
+  font-size: 3vw;
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-weight: 999;
+  user-select: none;
+}
 
 .hero-img {
   width: 45vw;
@@ -357,18 +369,18 @@ button {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: -100%;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--white-color);
-  opacity: 0.9;
+  background-color: var(--black-color);
+  opacity: 0;
   text-align: center;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .project:hover .project-details {
-  top: 0;
+  opacity: 0.8;
 }
 .project-details h2 {
   font-size: 3vw;
@@ -380,6 +392,7 @@ button {
   font-size: 1.2vw;
   text-transform: capitalize;
   font-weight: 500;
+  color: var(--white-color);
 }
 
 .btns-div {

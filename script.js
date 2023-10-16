@@ -170,6 +170,11 @@ let skillsData = [
     skillImg: "./Assests/Images/Logos/react.png",
     skillName: "react",
   },
+  {
+    id: 6,
+    skillImg: "https://cdn.worldvectorlogo.com/logos/gsap-greensock.svg",
+    skillName: "gsap",
+  },
 ];
 
 // storing projects data dynamically
