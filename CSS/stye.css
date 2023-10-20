@@ -138,7 +138,6 @@ button {
   cursor: pointer;
   border-bottom: 2px solid var(--gray-color);
   padding-bottom: 3px;
-  /* display: none; */
 }
 
 .right-nav .resume-btn h1,
@@ -189,20 +188,15 @@ button {
   text-transform: uppercase;
   color: var(--text-color);
   font-weight: 999;
-  line-height: 15vw;
+  line-height: 1;
   user-select: none;
 }
-.hero-section h4 {
-  position: absolute;
-  /* left: 50%; */
-  top: 50%;
-  transform: translate(-50%,0%);
-  text-align: left;
-  font-size: 3vw;
-  text-transform: uppercase;
+
+.hero-section h5{
+  font-size: 2vw;
+  line-height: 2px;
+  margin-left:0.5vw ;
   color: var(--text-color);
-  font-weight: 999;
-  user-select: none;
 }
 
 .hero-img {
@@ -266,7 +260,6 @@ button {
   min-height: 100vh;
   position: relative;
   background-color: var(--secondary-color);
-  /* border-bottom: 1px solid var(--text-color); */
 }
 
 .section-title {
@@ -297,18 +290,20 @@ button {
   padding: 2vw;
   display: flex;
   justify-content: center;
+  align-items:center ;
   flex-direction: column;
   transition: all 0.3s ease-in;
 }
 .skill:hover {
   background-color: var(--text-color);
-  /* transform: rotateY(360deg); */
 }
 .skill-img-container {
-  width: 100%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   display: flex;
+  align-items: center;
   justify-content: center;
+  margin-bottom: 1vw;
 }
 
 .skill-img-container img {
@@ -346,9 +341,8 @@ button {
 
 .project {
   width: 30vw;
-  height: 30vw;
+  height: 15vw;
   position: relative;
-  border-radius: 10px;
   overflow: hidden;
   background-color: var(--text-color);
 }
@@ -365,7 +359,7 @@ button {
 }
 
 .project-details {
-  padding: 3vw;
+  padding: 1.5vw;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -386,13 +380,14 @@ button {
   font-size: 3vw;
   text-transform: capitalize;
   color: var(--text-color);
-  margin-bottom: 1vw;
+  margin-bottom: 0.2vw;
 }
 .project-details p {
   font-size: 1.2vw;
   text-transform: capitalize;
   font-weight: 500;
   color: var(--white-color);
+  display: none;
 }
 
 .btns-div {
@@ -653,18 +648,101 @@ button {
   }
 }
 
-#top-scroller{
-  position: fixed;
-  bottom: 2%;
-  right: 2%;
-  z-index: 1000;
+#scroller{
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
   display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-color);
+  position: fixed;
+  z-index: 998;
+  bottom: 5%;
+  right: 2%;
+  cursor: pointer;
 }
 
-#top-scroller i{
-  font-size: 2vw;
-  padding: 0.5vw;
-  border-radius: 50%;
+
+/* challenges page section  */
+
+#challenges-page{
+  width: 95%;
+  min-height: 100vh;
   background-color: var(--text-color);
-  color: var(--black-color);
+  position: fixed;
+  top: 1%;
+  left: 2.5%;
+  z-index: 998;
+}
+
+
+#challenges-close{
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  cursor: pointer;
+}
+#challenges-close i{
+  font-size: 2rem;
+  color: var(--white-color);
+}
+#title{
+  font-size: 4vw;
+  text-align: center;
+  margin-top: 2vw;
+}
+#challenges-container{
+  width: 95%;
+  min-height: 100vh;
+  padding-top: 4vw;
+  margin: auto;
+  background: red;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.challenge{
+  width: 30vw;
+  height: 14vw;
+  position: relative;
+  margin: 5px;
+}
+.challenge-img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.challenge-img img{
+  width: 100%;
+  height: 100%;
+  object-fit:cover ;
+}
+.challenge-details{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--black-color);
+  opacity: 0;
+  padding: 2vw;
+  transition: all 0.3s ease-in;
+}
+
+.challenge-details h2{
+  text-align: center;
+  font-size: 2vw;
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
+.challenge:hover .challenge-details{
+  opacity: 0.8;
 }

@@ -42,7 +42,7 @@ function animations() {
     stagger: 0.3,
   });
 
-  tl.from(".hero-section h2", {
+  tl.from(".hero-section h5,.hero-section h2", {
     x: 700,
     duration: 0.5,
     stagger: 0.4,
@@ -332,7 +332,7 @@ const scriptURL =
   "https://script.google.com/macros/s/AKfycbx891t2zPkwOfhPhk9nOC_-UmR6ovGXg_IpMXszmsdjKWZ3eVC3evf9CWUgFhqrkpH-mw/exec";
 const form = document.forms["submit-to-google-sheet"];
 
-// exexutes on form submit 
+// exexutes on form submit
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -344,7 +344,6 @@ form.addEventListener("submit", (e) => {
     setTimeout(() => {
       feedback.innerHTML = " ";
     }, 3000);
-
   } else {
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
@@ -365,3 +364,20 @@ form.addEventListener("submit", (e) => {
       });
   }
 });
+
+// scroll to top button added
+let scroller = document.getElementById("scroller");
+window.addEventListener("scroll", () => {
+  let position = document.documentElement.scrollTop;
+  if (Math.round(position) > 250) {
+    scroller.style.display = "flex";
+    console.log("show scroller")
+  } else {
+    scroller.style.display = "none";
+  }
+});
+
+scroller.addEventListener("click",()=>{
+  console.log("click")
+  document.documentElement.scrollTop = 0;
+})

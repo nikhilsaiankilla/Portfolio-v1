@@ -143,6 +143,16 @@
   .footer-section h2 {
     font-size: 3vw;
   }
+  #challenges-close{
+    top: 2%;
+  }
+  .challenge{
+    width: 90vw; 
+    height: 30vw;
+  }
+  .challenge-details h2{
+    font-size: 5vw;
+  }
 }
 @media (min-width: 601px) and (max-width: 768px) {
   .padding {
