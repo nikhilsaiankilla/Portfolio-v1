@@ -1,6 +1,6 @@
 @media (max-width: 600px) {
-  #cursor{
-    scale: 0;
+  #cursor {
+    display: none;
   }
   .section-title {
     font-size: 8vw;
@@ -22,6 +22,10 @@
   .nav-links li {
     margin-bottom: 2vw;
   }
+  /* showing the contact link  */
+  .nav-links li:last-child {
+    display: block;
+  }
   .nav-links li a {
     font-size: 5vw;
     color: var(--white-color);
@@ -29,7 +33,8 @@
   .nav-links li a span {
     color: var(--black-color);
   }
-  .right-nav .resume-btn {
+  .right-nav .resume-btn ,
+  .right-nav .contact-me-btn{
     display: none;
   }
   .right-nav #hamburger {
@@ -51,7 +56,11 @@
   .hero-img {
     width: 85vw;
     height: 70vw;
-    bottom: 0%;
+    bottom: -10px;
+  }
+
+  .hero-section h5 {
+    font-size: 5vw;
   }
   .about-section h2 {
     font-size: 10vw;
@@ -101,10 +110,11 @@
   }
   .challenges-container {
     flex-direction: column-reverse;
+    min-height: 80vh;
   }
   .left-challenges {
     width: 100%;
-    height: 50vh;
+    min-height: 80vh;
   }
   .left-challenges h2 {
     font-size: 9vw;
@@ -117,8 +127,7 @@
     padding: 2.5vw 5vw;
   }
   .right-challenges {
-    width: 100%;
-    height: 50vh;
+    display: none;
   }
   .right-challenges img {
     object-fit: contain;
@@ -134,7 +143,7 @@
     font-size: 4vw;
     margin-top: 2vw;
   }
-  .feedback{
+  .feedback {
     font-size: 2vw;
   }
   .icon i {
@@ -143,18 +152,32 @@
   .footer-section h2 {
     font-size: 3vw;
   }
-  #challenges-close{
+  #challenges-close {
     top: 2%;
   }
-  .challenge{
-    width: 90vw; 
+  .challenge {
+    width: 90vw;
     height: 30vw;
   }
-  .challenge-details h2{
+  .challenge-details h2 {
     font-size: 5vw;
   }
+  #contact-img-1 {
+    left: 2%;
+    top: -5%;
+    width: 25vw;
+  }
+
+  #contact-img-2 {
+    width: 30vw;
+    right: 3%;
+    bottom: -10%;
+  }
 }
-@media (min-width: 601px) and (max-width: 768px) {
+@media (min-width: 601px) and (max-width: 769px) {
+  #cursor {
+    display: none;
+  }
   .padding {
     padding: 6vw 2vw;
   }
@@ -180,10 +203,16 @@
     font-size: 3vw;
     color: var(--white-color);
   }
+
+  /* showing the contact link  */
+  .nav-links li:last-child {
+    display: block;
+  }
   .nav-links li a span {
     color: var(--black-color);
   }
-  .right-nav .resume-btn {
+  .right-nav .resume-btn ,
+  .right-nav .contact-me-btn{
     display: none;
   }
   .right-nav #hamburger {
@@ -198,6 +227,20 @@
     -webkit-user-drag: none;
     user-select: none;
   }
+  .about-section .content p {
+    font-size: 2vw;
+  }
+  .right-nav .resume-btn h1,
+  .resume h1,
+  .contact-me-btn h1 {
+    font-size: 1.8vw;
+  }
+
+  .right-nav .resume-btn i,
+  .resume i,
+  .contact-me-btn i {
+    font-size: 2vw;
+  }
 
   .skill {
     width: 30%;
@@ -205,16 +248,17 @@
   }
 
   .project {
-    width: 45%;
-    height: 45%;
+    width: 45vw;
+    height: 25vw;
   }
 
   .challenges-container {
     flex-direction: column-reverse;
+    min-height: 100vh;
   }
   .left-challenges {
     width: 100%;
-    height: 50vh;
+    min-height: 90vh;
   }
   .left-challenges h2 {
     font-size: 5vw;
@@ -228,7 +272,8 @@
   }
   .right-challenges {
     width: 100%;
-    height: 50vh;
+    height: 70vh;
+    display: none;
   }
   .right-challenges img {
     object-fit: contain;
@@ -242,6 +287,15 @@
   }
   .contact-section .send-btn {
     font-size: 2vw;
+  }
+  #contact-img-1 {
+    left: 2%;
+    top: 2%;
+  }
+
+  #contact-img-2 {
+    right: 1%;
+    bottom: -10%;
   }
   .icon i {
     font-size: 3vw;

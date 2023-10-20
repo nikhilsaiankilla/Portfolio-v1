@@ -338,29 +338,29 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (!userNameHandler() || !userEmailHandler() || !userMessageHandler()) {
-    feedback.style.color = "red";
-    feedback.innerHTML = "failed to send please checkout the details.";
+    feedback.style.color = "#FF5733";
+    feedback.innerHTML = "Oops! You skipped the form, but I'm on the case. Enter details, and we'll connect soon!";
 
     setTimeout(() => {
       feedback.innerHTML = " ";
-    }, 3000);
+    }, 6000);
   } else {
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
-        feedback.style.color = "green";
-        feedback.innerHTML = "sent successfully....!";
+        feedback.style.color = "#7CFC00";
+        feedback.innerHTML = "Got it! Your message has safely landed in our digital realm. I\'ll reach out soon.";
 
         setTimeout(() => {
           feedback.innerHTML = " ";
-        }, 3000);
+        }, 6000);
       })
       .catch((error) => {
-        feedback.style.color = "red";
-        feedback.innerHTML = "failed to send please try again..!";
+        feedback.style.color = "#FF5733";
+        feedback.innerHTML = "Message got lost in cyberspace. Double-check details, it'll find its way.";
 
         setTimeout(() => {
           feedback.innerHTML = " ";
-        }, 3000);
+        }, 6000);
       });
   }
 });
@@ -371,13 +371,18 @@ window.addEventListener("scroll", () => {
   let position = document.documentElement.scrollTop;
   if (Math.round(position) > 250) {
     scroller.style.display = "flex";
-    console.log("show scroller")
+    console.log("show scroller");
   } else {
     scroller.style.display = "none";
   }
 });
 
-scroller.addEventListener("click",()=>{
-  console.log("click")
+scroller.addEventListener("click", () => {
+  console.log("click");
   document.documentElement.scrollTop = 0;
-})
+});
+
+function navigateToContact(){
+  let contactSection = document.getElementById("contact-section")
+  contactSection.scrollIntoView()
+}
