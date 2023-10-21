@@ -261,31 +261,36 @@ let skillsData = [
 let projectsData = [
   {
     id: 0,
-    projectImg: "./Assests/Images/dev-2.png",
-    projectName: "Project Name",
-    projectDesc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-      mollitia aspernatur repellendus optio praesentium excepturi. Aut
-      modi nihil laudantium rem?`,
-    projectLiveLink: "https://github.com/nikhilsaiankilla",
-    projectGithubLink: "https://github.com/nikhilsaiankilla",
+    projectImg: "./Assests/Images/ProjectImages/portfolio.png",
+    projectName: "my portfolio",
+    projectLiveLink: "https://nikhilsaiportfolio.netlify.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/Portfolio-v1",
   },
   {
     id: 1,
-    projectImg: "./Assests/Images/dev-3.png",
-    projectName: "Project Name",
-    projectDesc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-      mollitia aspernatur repellendus optio praesentium excepturi. Aut
-      modi nihil laudantium rem?`,
-    projectLiveLink: "https://github.com/nikhilsaiankilla",
-    projectGithubLink: "https://github.com/nikhilsaiankilla",
+    projectImg: "./Assests/Images/ProjectImages/twogood.png",
+    projectName: "two good website",
+    projectLiveLink: "https://twogood.netlify.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/twogoodproject",
   },
   {
     id: 2,
-    projectImg: "./Assests/Images/dev-1.png",
-    projectName: "Project Name",
-    projectDesc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-      mollitia aspernatur repellendus optio praesentium excepturi. Aut
-      modi nihil laudantium rem?`,
+    projectImg: "./Assests/Images/ProjectImages/shoestore.png",
+    projectName: "Nike Shoe store",
+    projectLiveLink: "https://shoestoreclone.netlify.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/Nike-Ecommerce-Website",
+  },
+  {
+    id: 3,
+    projectImg: "./Assests/Images/ProjectImages/mirinda.png",
+    projectName: "mirianda clone",
+    projectLiveLink: "https://mirandaclonebynikhil.netlify.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/miranda-clone",
+  },
+  {
+    id: 4,
+    projectImg: "./Assests/Images/ProjectImages/project4.png",
+    projectName: "DUO",
     projectLiveLink: "https://github.com/nikhilsaiankilla",
     projectGithubLink: "https://github.com/nikhilsaiankilla",
   },
@@ -355,7 +360,7 @@ projectsData.forEach((project) => {
 
   let githubLink = document.createElement("a");
   githubLink.classList.add("git-btn");
-  githubLink.href = project.projectLiveLink;
+  githubLink.href = project.projectGithubLink;
   githubLink.target = "_blank";
 
   githubLink.innerHTML = `<i class="ri-github-fill"></i>`;

@@ -383,7 +383,7 @@ button {
 }
 
 .project:hover .project-details {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .project-details h2 {
   font-size: 3vw;
