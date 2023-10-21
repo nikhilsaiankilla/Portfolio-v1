@@ -196,6 +196,11 @@ button {
   user-select: none;
 }
 
+.namaste-img{
+  width: 25px;
+  margin: 0 10px;
+}
+
 .hero-section h5 {
   font-size: 2vw;
   line-height: 2px;
