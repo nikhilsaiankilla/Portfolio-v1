@@ -1,3 +1,25 @@
+loco();
+animations();
+navLinkHandlerOnClick();
+heroImgResponseAnimation();
+cursorAnimations();
+loadingScreenAnimation();
+
+// Declaritions
+let navBar = document.querySelector(".nav-links");
+let skillsContainer = document.querySelector(".skills-container");
+let projectsContainer = document.querySelector(".projects-container");
+let challengeContainer = document.getElementById("challenges-container");
+let feedback = document.querySelector(".feedback");
+let submitBtn = document.querySelector(".send-btn");
+let scroller = document.getElementById("scroller");
+let challengePage = document.getElementById('challenges-page')
+let challengeCloseBtn = document.getElementById('challenges-close')
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbx891t2zPkwOfhPhk9nOC_-UmR6ovGXg_IpMXszmsdjKWZ3eVC3evf9CWUgFhqrkpH-mw/exec";
+const form = document.forms["submit-to-google-sheet"];
+
+// Function Declaration Section
 function loco() {
   gsap.registerPlugin(ScrollTrigger);
   const locoScroll = new LocomotiveScroll({
@@ -26,11 +48,6 @@ function loco() {
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   ScrollTrigger.refresh();
 }
-loco();
-
-// declaritions
-let navBar = document.querySelector(".nav-links");
-
 function animations() {
   var tl = gsap.timeline();
 
@@ -54,9 +71,7 @@ function animations() {
     duration: 1.5,
   });
 }
-animations();
-
-// handling nav sliding
+// Handling Nav Sliding
 function navHandler() {
   let hamburger = document.querySelector("#hamburger i");
   if (navBar.classList.contains("hide")) {
@@ -69,8 +84,7 @@ function navHandler() {
     hamburger.classList.remove("ri-close-line");
   }
 }
-
-// handling nav on click on link
+// Handling Nav On Click On Link
 function navLinkHandlerOnClick() {
   let navBar = document.querySelector(".nav-links");
   let navLinks = document.querySelectorAll(".nav-links li a");
@@ -81,8 +95,6 @@ function navLinkHandlerOnClick() {
     });
   });
 }
-navLinkHandlerOnClick();
-
 function heroImgResponseAnimation() {
   let heroSection = document.getElementById("hero-section");
   heroSection.addEventListener("mousemove", (dets) => {
@@ -99,8 +111,6 @@ function heroImgResponseAnimation() {
     });
   });
 }
-heroImgResponseAnimation();
-
 function cursorAnimations() {
   let cursor = document.getElementById("cursor");
   cursor.style.display = "none";
@@ -127,8 +137,6 @@ function cursorAnimations() {
     });
   });
 }
-cursorAnimations();
-
 function loadingScreenAnimation() {
   window.addEventListener("load", () => {
     let loader = document.getElementById("loader-screen");
@@ -136,9 +144,82 @@ function loadingScreenAnimation() {
     loader.classList.add("hide-loader");
   });
 }
-loadingScreenAnimation();
+// Handles The Username
+function userNameHandler() {
+  let userName = document.getElementById("user-name").value;
+  if (userName.length == 0) {
+    return false;
+  }
+  return true;
+}
+// Handles The User Email
+function userEmailHandler() {
+  let userEmail = document.getElementById("user-email").value;
+  if (userEmail.length == 0) {
+    return false;
+  }
+  if (!userEmail.includes("@")) {
+    return false;
+  }
+  return true;
+}
+// Handles The User Message
+function userMessageHandler(message) {
+  let userMessage = document.getElementById("user-message").value;
+  if (userMessage.length == 0) {
+    return false;
+  }
+  return true;
+}
+// Navigates To Specific Section
+function navigateToContact() {
+  let contactSection = document.getElementById("contact-section");
+  contactSection.scrollIntoView();
+}
+function challengeActivater(){
+  console.log("clicked")
+  challengePage.style.display = "block"
+}
 
-// storing skills data dynamically
+
+// Function Calling Section
+
+// Executes On Form Submit
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (!userNameHandler() || !userEmailHandler() || !userMessageHandler()) {
+    feedback.style.color = "#FF5733";
+    feedback.innerHTML =
+      "Oops! You skipped the form, but I'm on the case. Enter details, and we'll connect soon!";
+
+    setTimeout(() => {
+      feedback.innerHTML = " ";
+    }, 6000);
+  } else {
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        feedback.style.color = "#7CFC00";
+        feedback.innerHTML =
+          "Got it! Your message has safely landed in our digital realm. I'll reach out soon.";
+
+        setTimeout(() => {
+          feedback.innerHTML = " ";
+        }, 6000);
+      })
+      .catch((error) => {
+        feedback.style.color = "#FF5733";
+        feedback.innerHTML =
+          "Message got lost in cyberspace. Double-check details, it'll find its way.";
+
+        setTimeout(() => {
+          feedback.innerHTML = " ";
+        }, 6000);
+      });
+  }
+});
+
+// Storing Skills Data Dynamically
 let skillsData = [
   {
     id: 0,
@@ -176,8 +257,7 @@ let skillsData = [
     skillName: "gsap",
   },
 ];
-
-// storing projects data dynamically
+// Storing Projects Data Dynamically
 let projectsData = [
   {
     id: 0,
@@ -211,9 +291,18 @@ let projectsData = [
   },
 ];
 
-let skillsContainer = document.querySelector(".skills-container");
+let challengesData = [
+  {
+    id: 0,
+    challengeImg:
+      "https://res.cloudinary.com/monday-blogs/w_768,h_384,c_fit/fl_lossy,f_auto,q_auto/wp-blog/2020/12/enterprise-img.jpeg",
+    challengeName: "Project Name",
+    challengeLiveLink: "https://github.com/nikhilsaiankilla",
+    challengeGithubLink: "https://github.com/nikhilsaiankilla",
+  },
+];
 
-// showing skills dynalically
+// Showing Skills Dynalically
 skillsData.forEach((skill) => {
   let skillbox = document.createElement("div");
   skillbox.classList.add("skill");
@@ -235,10 +324,7 @@ skillsData.forEach((skill) => {
 
   skillsContainer.appendChild(skillbox);
 });
-
-let projectsContainer = document.querySelector(".projects-container");
-
-// showing the projects dynalically
+// Showing The Projects Dynalically
 projectsData.forEach((project) => {
   let projectCard = document.createElement("div");
   projectCard.classList.add("project");
@@ -294,79 +380,55 @@ projectsData.forEach((project) => {
 
   projectsContainer.appendChild(projectCard);
 });
+//Showing Challenges Dynamically
+challengesData.forEach((challenge) => {
+  let challengeCard = document.createElement("div");
+  challengeCard.classList.add("challenge");
 
-let feedback = document.querySelector(".feedback");
-let submitBtn = document.querySelector(".send-btn");
+  let challengeImgContainer = document.createElement("div");
+  challengeImgContainer.classList.add("challenge-img");
 
-// handles the username
-function userNameHandler() {
-  let userName = document.getElementById("user-name").value;
-  if (userName.length == 0) {
-    return false;
-  }
-  return true;
-}
+  let challengeImg = document.createElement("img");
+  challengeImg.src = challenge.challengeImg;
 
-// handles the user email
-function userEmailHandler() {
-  let userEmail = document.getElementById("user-email").value;
-  if (userEmail.length == 0) {
-    return false;
-  }
-  if (!userEmail.includes("@")) {
-    return false;
-  }
-  return true;
-}
+  challengeImgContainer.appendChild(challengeImg);
+  challengeCard.appendChild(challengeImgContainer)
 
-// handles the user message
-function userMessageHandler(message) {
-  let userMessage = document.getElementById("user-message").value;
-  if (userMessage.length == 0) {
-    return false;
-  }
-  return true;
-}
+  let challengeDetailsContiner = document.createElement("div");
+  challengeDetailsContiner.classList.add("challenge-details");
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbx891t2zPkwOfhPhk9nOC_-UmR6ovGXg_IpMXszmsdjKWZ3eVC3evf9CWUgFhqrkpH-mw/exec";
-const form = document.forms["submit-to-google-sheet"];
+  let challengeTitle = document.createElement("h2");
+  challengeTitle.innerHTML = challenge.challengeName;
 
-// exexutes on form submit
+  challengeDetailsContiner.appendChild(challengeTitle);
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  let buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("btns-div");
 
-  if (!userNameHandler() || !userEmailHandler() || !userMessageHandler()) {
-    feedback.style.color = "#FF5733";
-    feedback.innerHTML = "Oops! You skipped the form, but I'm on the case. Enter details, and we'll connect soon!";
+  let liveLink = document.createElement("a");
+  liveLink.classList.add("live-btn");
+  liveLink.href = challenge.challengeGithubLink;
+  liveLink.target = "_blank";
 
-    setTimeout(() => {
-      feedback.innerHTML = " ";
-    }, 6000);
-  } else {
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        feedback.style.color = "#7CFC00";
-        feedback.innerHTML = "Got it! Your message has safely landed in our digital realm. I\'ll reach out soon.";
+  liveLink.innerHTML = `<i class="ri-share-box-fill"></i>`;
 
-        setTimeout(() => {
-          feedback.innerHTML = " ";
-        }, 6000);
-      })
-      .catch((error) => {
-        feedback.style.color = "#FF5733";
-        feedback.innerHTML = "Message got lost in cyberspace. Double-check details, it'll find its way.";
+  let githubLink = document.createElement("a");
+  githubLink.classList.add("git-btn");
+  githubLink.href = challenge.challengeLiveLink;
+  githubLink.target = "_blank";
 
-        setTimeout(() => {
-          feedback.innerHTML = " ";
-        }, 6000);
-      });
-  }
+  githubLink.innerHTML = `<i class="ri-github-fill"></i>`;
+
+  buttonsDiv.appendChild(liveLink);
+  buttonsDiv.appendChild(githubLink);
+
+  challengeDetailsContiner.appendChild(buttonsDiv);
+  challengeCard.appendChild(challengeDetailsContiner);
+
+  challengeContainer.appendChild(challengeCard);
 });
-
+// Events
 // scroll to top button added
-let scroller = document.getElementById("scroller");
 window.addEventListener("scroll", () => {
   let position = document.documentElement.scrollTop;
   if (Math.round(position) > 250) {
@@ -376,13 +438,10 @@ window.addEventListener("scroll", () => {
     scroller.style.display = "none";
   }
 });
-
 scroller.addEventListener("click", () => {
   console.log("click");
   document.documentElement.scrollTop = 0;
 });
-
-function navigateToContact(){
-  let contactSection = document.getElementById("contact-section")
-  contactSection.scrollIntoView()
-}
+challengeCloseBtn.addEventListener("click",()=>{
+  challengePage.style.display = "none"
+})

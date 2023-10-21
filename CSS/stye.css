@@ -425,7 +425,7 @@ button {
 
 .challenges-container {
   width: 100%;
-  height: 100vh;
+  /* min-height: 80vh; */
   margin: 2vw 0;
   display: flex;
   justify-content: space-between;
@@ -466,7 +466,7 @@ button {
 }
 .right-challenges {
   width: 50%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   border: 5px solid var(--text-color);
@@ -491,6 +491,41 @@ button {
   flex-direction: column;
   background-color: var(--secondary-color);
   border-bottom: 1px solid var(--text-color);
+}
+#contact-img{
+  position: absolute;
+  width: 10%;
+  left: 15%;
+  animation: rotateRight 20s linear 0s infinite backwards ;
+}
+#contact-img-2{
+  position: absolute;
+  width: 15%;
+  right: 10%;
+  bottom: 10%;
+  animation: rotateLeft 20s linear 0s infinite forwards ;
+}
+
+
+@keyframes rotateRight {
+  0%{
+    transform: rotate(0deg);
+    right: 100%;
+  }
+  100%{
+    transform: rotate(360deg);
+    right: 0%;
+  }
+}
+@keyframes rotateLeft {
+  0%{
+    transform: rotate(0deg);
+    left: 0%;
+  }
+  100%{
+    transform: rotate(360deg);
+    left: 100%;
+  }
 }
 .contact-content {
   width: 100%;
@@ -682,7 +717,7 @@ button {
   position: fixed;
   top: 1%;
   left: 2.5%;
-  z-index: 998;
+  z-index: 995;
   display: none;
 }
 
@@ -706,7 +741,7 @@ button {
   min-height: 100vh;
   padding-top: 4vw;
   margin: auto;
-  background: red;
+  /* background: red; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -716,6 +751,7 @@ button {
   height: 14vw;
   position: relative;
   margin: 5px;
+  z-index: 997;
 }
 .challenge-img {
   position: relative;
