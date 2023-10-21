@@ -291,8 +291,8 @@ let projectsData = [
     id: 4,
     projectImg: "./Assests/Images/ProjectImages/project4.png",
     projectName: "DUO",
-    projectLiveLink: "https://github.com/nikhilsaiankilla",
-    projectGithubLink: "https://github.com/nikhilsaiankilla",
+    projectLiveLink: "https://duobynikhil.netlify.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/DUO",
   },
 ];
 
