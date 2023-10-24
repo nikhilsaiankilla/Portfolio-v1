@@ -353,7 +353,6 @@ button {
   height: 15vw;
   position: relative;
   overflow: hidden;
-  background-color: var(--text-color);
 }
 
 .project .project-img {
@@ -376,32 +375,30 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--black-color);
+  background-color: var(--primary-color);
   opacity: 0;
   text-align: center;
   transition: all 0.3s ease-in;
 }
 
 .project:hover .project-details {
-  opacity: 0.9;
+  opacity: 1;
+ 
 }
+
+.project:hover{
+  box-shadow: 1px 1px 3px 1.4px rgba(0, 0, 0, 0.3);
+}
+
 .project-details h2 {
   font-size: 3vw;
   text-transform: capitalize;
   color: var(--text-color);
   margin-bottom: 0.2vw;
 }
-.project-details p {
-  font-size: 1.2vw;
-  text-transform: capitalize;
-  font-weight: 500;
-  color: var(--white-color);
-  display: none;
-}
-
 .btns-div {
   width: 100%;
-  margin-top: 3vw;
+  margin-top: 2vw;
   display: flex;
   justify-content: center;
   gap: 5vw;
@@ -414,9 +411,9 @@ button {
 .btns-div a i {
   color: var(--black-color);
   background-color: var(--text-color);
-  padding: 1vw 2vw;
+  padding: 0.7rem 2rem;
   border-radius: 5px;
-  font-size: 1.5vw;
+  font-size: 2rem;
   border: 1px solid var(--black-color);
 }
 
@@ -497,38 +494,23 @@ button {
   background-color: var(--secondary-color);
   border-bottom: 1px solid var(--text-color);
 }
-#contact-img{
-  position: absolute;
-  width: 10%;
-  left: 15%;
-  animation: rotateRight 20s linear 0s infinite backwards ;
-}
 #contact-img-2{
   position: absolute;
   width: 15%;
   right: 10%;
   bottom: 10%;
-  animation: rotateLeft 20s linear 0s infinite forwards ;
+  transform: rotate(0deg);
+  animation: rotateLeft 6s linear 0s infinite forwards ;
+  display: none;
 }
 
-
-@keyframes rotateRight {
-  0%{
-    transform: rotate(0deg);
-    right: 100%;
-  }
-  100%{
-    transform: rotate(360deg);
-    right: 0%;
-  }
-}
 @keyframes rotateLeft {
   0%{
-    transform: rotate(0deg);
+    top: 100%;
     left: 0%;
   }
   100%{
-    transform: rotate(360deg);
+    top: 0;
     left: 100%;
   }
 }

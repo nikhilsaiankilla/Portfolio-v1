@@ -13,8 +13,8 @@ let challengeContainer = document.getElementById("challenges-container");
 let feedback = document.querySelector(".feedback");
 let submitBtn = document.querySelector(".send-btn");
 let scroller = document.getElementById("scroller");
-let challengePage = document.getElementById('challenges-page')
-let challengeCloseBtn = document.getElementById('challenges-close')
+let challengePage = document.getElementById("challenges-page");
+let challengeCloseBtn = document.getElementById("challenges-close");
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbx891t2zPkwOfhPhk9nOC_-UmR6ovGXg_IpMXszmsdjKWZ3eVC3evf9CWUgFhqrkpH-mw/exec";
 const form = document.forms["submit-to-google-sheet"];
@@ -176,13 +176,10 @@ function navigateToContact() {
   let contactSection = document.getElementById("contact-section");
   contactSection.scrollIntoView();
 }
+
 function challengeActivater(){
-  console.log("clicked")
-  challengePage.style.display = "block"
+  window.open('https://github.com/nikhilsaiankilla/30Days30Projects')
 }
-
-
-// Function Calling Section
 
 // Executes On Form Submit
 form.addEventListener("submit", (e) => {
@@ -199,11 +196,17 @@ form.addEventListener("submit", (e) => {
   } else {
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
+        let paperPlane = document.getElementById("contact-img-2");
+        paperPlane.style.display = "block";
         feedback.style.color = "#7CFC00";
         feedback.innerHTML =
           "Got it! Your message has safely landed in our digital realm. I'll reach out soon.";
 
+        document.getElementById("user-message").value = " ";
+        document.getElementById("user-name").value = " ";
+        document.getElementById("user-email").value = " ";
         setTimeout(() => {
+          paperPlane.style.display = "none";
           feedback.innerHTML = " ";
         }, 6000);
       })
@@ -278,7 +281,8 @@ let projectsData = [
     projectImg: "./Assests/Images/ProjectImages/shoestore.png",
     projectName: "Nike Shoe store",
     projectLiveLink: "https://shoestoreclone.netlify.app/",
-    projectGithubLink: "https://github.com/nikhilsaiankilla/Nike-Ecommerce-Website",
+    projectGithubLink:
+      "https://github.com/nikhilsaiankilla/Nike-Ecommerce-Website",
   },
   {
     id: 3,
@@ -291,19 +295,8 @@ let projectsData = [
     id: 4,
     projectImg: "./Assests/Images/ProjectImages/project4.png",
     projectName: "DUO",
-    projectLiveLink: "https://github.com/nikhilsaiankilla",
-    projectGithubLink: "https://github.com/nikhilsaiankilla",
-  },
-];
-
-let challengesData = [
-  {
-    id: 0,
-    challengeImg:
-      "https://res.cloudinary.com/monday-blogs/w_768,h_384,c_fit/fl_lossy,f_auto,q_auto/wp-blog/2020/12/enterprise-img.jpeg",
-    challengeName: "Project Name",
-    challengeLiveLink: "https://github.com/nikhilsaiankilla",
-    challengeGithubLink: "https://github.com/nikhilsaiankilla",
+    projectLiveLink: "https://duobynikhil.netlify.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/duo",
   },
 ];
 
@@ -341,12 +334,7 @@ projectsData.forEach((project) => {
   projectTitle.classList.add("project-name");
   projectTitle.innerText = project.projectName;
 
-  let projectDesc = document.createElement("p");
-  projectDesc.innerText = project.projectDesc;
-
   projectDetailsCard.appendChild(projectTitle);
-
-  projectDetailsCard.appendChild(projectDesc);
 
   let buttonsDiv = document.createElement("div");
   buttonsDiv.classList.add("btns-div");
@@ -370,8 +358,6 @@ projectsData.forEach((project) => {
 
   projectDetailsCard.appendChild(buttonsDiv);
 
-  projectCard.appendChild(projectDetailsCard);
-
   let projectImageCard = document.createElement("div");
   projectImageCard.classList.add("project-img");
 
@@ -382,55 +368,8 @@ projectsData.forEach((project) => {
   projectImageCard.appendChild(projectImg);
 
   projectCard.appendChild(projectImageCard);
-
+  projectCard.appendChild(projectDetailsCard)
   projectsContainer.appendChild(projectCard);
-});
-//Showing Challenges Dynamically
-challengesData.forEach((challenge) => {
-  let challengeCard = document.createElement("div");
-  challengeCard.classList.add("challenge");
-
-  let challengeImgContainer = document.createElement("div");
-  challengeImgContainer.classList.add("challenge-img");
-
-  let challengeImg = document.createElement("img");
-  challengeImg.src = challenge.challengeImg;
-
-  challengeImgContainer.appendChild(challengeImg);
-  challengeCard.appendChild(challengeImgContainer)
-
-  let challengeDetailsContiner = document.createElement("div");
-  challengeDetailsContiner.classList.add("challenge-details");
-
-  let challengeTitle = document.createElement("h2");
-  challengeTitle.innerHTML = challenge.challengeName;
-
-  challengeDetailsContiner.appendChild(challengeTitle);
-
-  let buttonsDiv = document.createElement("div");
-  buttonsDiv.classList.add("btns-div");
-
-  let liveLink = document.createElement("a");
-  liveLink.classList.add("live-btn");
-  liveLink.href = challenge.challengeGithubLink;
-  liveLink.target = "_blank";
-
-  liveLink.innerHTML = `<i class="ri-share-box-fill"></i>`;
-
-  let githubLink = document.createElement("a");
-  githubLink.classList.add("git-btn");
-  githubLink.href = challenge.challengeLiveLink;
-  githubLink.target = "_blank";
-
-  githubLink.innerHTML = `<i class="ri-github-fill"></i>`;
-
-  buttonsDiv.appendChild(liveLink);
-  buttonsDiv.appendChild(githubLink);
-
-  challengeDetailsContiner.appendChild(buttonsDiv);
-  challengeCard.appendChild(challengeDetailsContiner);
-
-  challengeContainer.appendChild(challengeCard);
 });
 // Events
 // scroll to top button added
@@ -438,15 +377,10 @@ window.addEventListener("scroll", () => {
   let position = document.documentElement.scrollTop;
   if (Math.round(position) > 250) {
     scroller.style.display = "flex";
-    console.log("show scroller");
   } else {
     scroller.style.display = "none";
   }
 });
 scroller.addEventListener("click", () => {
-  console.log("click");
   document.documentElement.scrollTop = 0;
 });
-challengeCloseBtn.addEventListener("click",()=>{
-  challengePage.style.display = "none"
-})
