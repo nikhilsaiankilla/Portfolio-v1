@@ -34,7 +34,7 @@ timeLine.from(".logo ,.nav-links li a, .resume-btn ,#nav .contact-me-btn", {
 timeLine.from(".hero-section h5,.hero-section .hero-greeting", {
   x: -700,
   duration: 0.5,
-  // opacity: 0,
+  opacity: 0,
 });
 
 timeLine.from(".hero-section .first-hero-text", {
