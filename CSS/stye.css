@@ -201,6 +201,11 @@ button {
   margin: 0 10px;
 }
 
+.hero-greeting{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .hero-section h5 {
   font-size: 2vw;
   line-height: 2px;
@@ -209,8 +214,8 @@ button {
 }
 
 .hero-img {
-  width: 45vw;
-  height: 50vw;
+  width: 40vw;
+  height: 40vw;
   bottom: -30px;
   object-fit: cover;
   position: absolute;
