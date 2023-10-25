@@ -1,4 +1,4 @@
-/* importing fonts  */
+/* =================== importing fonts  =================*/
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap");
 :root {
@@ -29,7 +29,7 @@ body {
 #main {
   background-color: #34353a;
 }
-/* cursor styling  */
+/*====================== cursor styling ================= */
 #cursor {
   width: 30px;
   height: 30px;
@@ -51,7 +51,7 @@ body {
   z-index: 999;
   mix-blend-mode: difference;
 }
-/* custom styling  */
+/*========================= custom styling  ===================*/
 .padding {
   padding: 6vw 5vw;
 }
@@ -61,7 +61,7 @@ button {
   outline: none;
 }
 
-/* nav styling  */
+/*======================= nav styling  ===================*/
 #nav {
   width: 100%;
   padding: 1vw 5vw;
@@ -171,7 +171,7 @@ button {
   color: #fff;
 }
 
-/* hero section styling  */
+/*==================== hero section styling  =====================*/
 
 .hero-section {
   width: 100%;
@@ -218,7 +218,7 @@ button {
   user-select: none;
 }
 
-/* about section styling  */
+/*====================== about section styling ====================== */
 
 .about-section {
   width: 100%;
@@ -262,7 +262,7 @@ button {
   margin-left: 17vw;
   gap: 30px;
 }
-/* skills section styling  */
+/*==================== skills section styling ==================== */
 
 .skills-section {
   width: 100%;
@@ -328,7 +328,7 @@ button {
   color: var(--white-color);
 }
 
-/* projects section styling  */
+/*=================== projects section styling  =====================*/
 
 .projects-section {
   width: 100%;
@@ -417,7 +417,7 @@ button {
   border: 1px solid var(--black-color);
 }
 
-/* challenges section styling  */
+/*=============== challenges section styling  ==============*/
 .challenges-section {
   width: 100%;
   min-height: 80vh;
@@ -427,7 +427,6 @@ button {
 
 .challenges-container {
   width: 100%;
-  /* min-height: 80vh; */
   margin: 2vw 0;
   display: flex;
   justify-content: space-between;
@@ -472,7 +471,6 @@ button {
   position: relative;
   overflow: hidden;
   border: 5px solid var(--text-color);
-  /* background-color: red; */
 }
 
 .right-challenges img {
@@ -483,7 +481,7 @@ button {
   object-fit: cover;
 }
 
-/* constact section styling  */
+/* ===================== constact section styling =============  */
 
 .contact-section {
   width: 100%;
@@ -496,7 +494,7 @@ button {
 }
 #contact-img-2{
   position: absolute;
-  width: 15%;
+  width: 10%;
   right: 10%;
   bottom: 10%;
   transform: rotate(0deg);
@@ -530,7 +528,9 @@ button {
 }
 
 .contact-section form input,
-.contact-section form textarea {
+.contact-section form textarea,
+.contact-section form input:focus,
+.contact-section form textarea:focus {
   width: 100%;
   padding: 10px 15px;
   font-size: 1vw;
@@ -574,6 +574,9 @@ button {
   margin-top: 2vw;
 }
 
+
+/* ================ icons section ==================== */
+
 .icons-section {
   width: 100%;
   display: flex;
@@ -608,6 +611,7 @@ button {
   margin: 0 1vw;
 }
 
+/* =============== footer section ================== */
 .footer-section {
   width: 100%;
   background-color: var(--secondary-color);
@@ -620,65 +624,7 @@ button {
   font-weight: 300;
 }
 
-.loader-screen {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background-color: var(--extra-color);
-  color: var(--text-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 10vw;
-  z-index: 999;
-}
-
-.loader-screen h4 {
-  font-size: 3vw;
-  margin-top: 5vw;
-  /* background-color: red; */
-  font-family: var(--primary-font);
-  font-weight: 600;
-}
-.hide-loader {
-  display: none;
-}
-
-.loader {
-  position: relative;
-  width: 8vw;
-  height: 8vw;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: rotate(45deg);
-  overflow: hidden;
-}
-.loader:after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  margin: auto;
-  background: #222b32;
-}
-.loader:before {
-  content: "";
-  position: absolute;
-  inset: -15px;
-  margin: auto;
-  background: var(--text-color);
-  animation: diamondLoader 2s linear infinite;
-}
-@keyframes diamondLoader {
-  0%,
-  10% {
-    transform: translate(-64px, -64px) rotate(-45deg);
-  }
-  90%,
-  100% {
-    transform: translate(0px, 0px) rotate(-45deg);
-  }
-}
-
+/* =============== top scroller =============== */
 #scroller {
   font-size: 30px;
   height: 40px;
@@ -695,86 +641,54 @@ button {
   cursor: pointer;
 }
 
-/* challenges page section  */
+/* ============ loader animations ============ */
 
-#challenges-page {
-  width: 95%;
-  min-height: 100vh;
-  background-color: var(--text-color);
+#pre-loader{
+  width: 100%;
+  height: 100vh;
   position: fixed;
-  top: 1%;
-  left: 2.5%;
-  z-index: 995;
-  display: none;
-}
+  left: 0;
+  top: 0;
+  z-index: 999;
 
-#challenges-close {
-  position: absolute;
-  top: 3%;
-  right: 2%;
-  cursor: pointer;
-}
-#challenges-close i {
-  font-size: 2rem;
-  color: var(--white-color);
-}
-#title {
-  font-size: 4vw;
-  text-align: center;
-  margin-top: 2vw;
-}
-#challenges-container {
-  width: 95%;
-  min-height: 100vh;
-  padding-top: 4vw;
-  margin: auto;
-  /* background: red; */
+  
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
-.challenge {
-  width: 30vw;
-  height: 14vw;
-  position: relative;
-  margin: 5px;
-  z-index: 997;
-}
-.challenge-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.challenge-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.challenge-details {
-  width: 100%;
-  height: 100%;
+
+#greeting{
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--black-color);
-  opacity: 0;
-  padding: 2vw;
-  transition: all 0.3s ease-in;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%,-20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+#greeting span{
+  margin: 0 2px;
 }
 
-.challenge-details h2 {
-  text-align: center;
-  font-size: 2vw;
-  text-transform: capitalize;
-  color: var(--text-color);
+#greeting img{
+  width: 2rem;
+  margin-left: 1rem;
+}
+.element{
+  width: 20%;
+  height: 100%;
+  background-color: var(--text-color);
 }
 
-.challenge:hover .challenge-details {
-  opacity: 0.8;
+#loader-value{
+  font-size: 3rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
 }
 

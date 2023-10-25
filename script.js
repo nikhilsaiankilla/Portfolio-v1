@@ -1,10 +1,224 @@
 loco();
-animations();
-navLinkHandlerOnClick();
 heroImgResponseAnimation();
 cursorAnimations();
-loadingScreenAnimation();
 
+let timeLine = gsap.timeline();
+
+timeLine.from("#greeting span,#greeting img", {
+  y: 50,
+  duration: 0.5,
+  delay: 0.2,
+  stagger:0.2,
+  opacity: 0,
+});
+
+timeLine.to("#loader-value", {
+  scale: 4,
+  duration: 2,
+  onStart: time(),
+});
+
+timeLine.to(".element", {
+  y: "-100%",
+  duration: 0.7,
+  stagger: 0.4,
+});
+
+timeLine.from(".logo ,.nav-links li a, .resume-btn ,#nav .contact-me-btn", {
+  y: -100,
+  duration: 0.2,
+  opacity: 0,
+  stagger: 0.2,
+});
+
+timeLine.from(".hero-section h5,.hero-section .hero-greeting", {
+  x: -700,
+  duration: 0.5,
+  // opacity: 0,
+});
+
+timeLine.from(".hero-section .first-hero-text", {
+  x: 700,
+  duration: 0.5,
+  opacity: 0,
+});
+
+timeLine.from(".hero-section .second-hero-text", {
+  x: -700,
+  duration: 0.5,
+  opacity: 0,
+});
+
+timeLine.from(".hero-section .hero-img", {
+  y: 700,
+  opacity: 0,
+  duration: 0.7,
+});
+
+gsap.from("#about-section h2", {
+  x: -400,
+  opacity: 0,
+  duration: 0.5,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#about-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+gsap.from("#about-section .content", {
+  x: -400,
+  opacity: 0,
+  delay: 0.5,
+  duration: 0.7,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#about-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+gsap.from("#skills-section h2", {
+  x: -400,
+  opacity: 0,
+  delay: 0.5,
+  duration: 0.7,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#skills-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+gsap.from("#skills-section .skills-container", {
+  x: 400,
+  opacity: 0,
+  delay: 1,
+  duration: 0.7,
+  stagger: 0.2,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#skills-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+
+gsap.from("#projects-section h2", {
+  x: -400,
+  opacity: 0,
+  delay: 0.5,
+  duration: 0.7,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#projects-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+gsap.from("#projects-section .projects-container", {
+  x: 400,
+  opacity: 0,
+  delay: 1,
+  duration: 0.7,
+  stagger: 0.2,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#projects-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+gsap.from(".challenges-section .section-title", {
+  y: 100,
+  opacity: 0,
+  duration: 0.6,
+  delay: 0.5,
+  scrollTrigger: {
+    trigger: ".challenges-section",
+    scroller: "#main",
+    start: "top 60%",
+    end: "top 0%",
+    // markers:true,
+  },
+});
+
+gsap.from(".challenges-section .left-challenges", {
+  x: -400,
+  opacity: 0,
+  delay: 1,
+  duration: 0.7,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: ".challenges-section",
+    // markers:true,
+    start: "top 60%",
+    end: "top 0%",
+  },
+});
+gsap.from(".challenges-section .right-challenges", {
+  x: 400,
+  opacity: 0,
+  delay: 1,
+  duration: 0.7,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: ".challenges-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+
+gsap.from("#contact-section h2", {
+  y: 100,
+  opacity: 0,
+  duration: 0.6,
+  delay: 0.5,
+  scrollTrigger: {
+    trigger: "#contact-section",
+    scroller: "#main",
+    start: "top 70%",
+    end: "top 0%",
+    // markers:true,
+  },
+});
+
+gsap.from("#contact-section #contact-form", {
+  rotate: "360deg",
+  opacity: 0,
+  scale: 0,
+  delay: 1,
+  duration: 1,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#contact-section",
+    // markers:true,
+    start: "top 70%",
+    end: "top 0%",
+  },
+});
+
+gsap.from("#icons-section .icon", {
+  x: -400,
+  duration: 0.5,
+  stagger: 0.3,
+  opacity: 0,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#icons-section",
+    start: "top 90%",
+    end: "top 0%",
+    // markers:true
+  },
+});
+navLinkHandlerOnClick();
 // Declaritions
 let navBar = document.querySelector(".nav-links");
 let skillsContainer = document.querySelector(".skills-container");
@@ -48,29 +262,7 @@ function loco() {
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   ScrollTrigger.refresh();
 }
-function animations() {
-  var tl = gsap.timeline();
 
-  tl.from(".logo ,.nav-links li a, .resume-btn", {
-    y: -100,
-    duration: 0.5,
-    opacity: 0,
-    // delay: 0.5,
-    stagger: 0.3,
-  });
-
-  tl.from(".hero-section h5,.hero-section h2", {
-    x: 700,
-    duration: 0.5,
-    stagger: 0.4,
-    opacity: 0,
-  });
-  tl.from(".hero-section .hero-img", {
-    y: 700,
-    opacity: 0,
-    duration: 1.5,
-  });
-}
 // Handling Nav Sliding
 function navHandler() {
   let hamburger = document.querySelector("#hamburger i");
@@ -86,15 +278,17 @@ function navHandler() {
 }
 // Handling Nav On Click On Link
 function navLinkHandlerOnClick() {
-  let navBar = document.querySelector(".nav-links");
   let navLinks = document.querySelectorAll(".nav-links li a");
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       let navBar = document.querySelector(".nav-links");
       navBar.classList.add("hide");
+      hamburger.classList.add("ri-bar-chart-horizontal-line");
+      hamburger.classList.remove("ri-close-line");
     });
   });
 }
+
 function heroImgResponseAnimation() {
   let heroSection = document.getElementById("hero-section");
   heroSection.addEventListener("mousemove", (dets) => {
@@ -137,13 +331,6 @@ function cursorAnimations() {
     });
   });
 }
-function loadingScreenAnimation() {
-  window.addEventListener("load", () => {
-    let loader = document.getElementById("loader-screen");
-
-    loader.classList.add("hide-loader");
-  });
-}
 // Handles The Username
 function userNameHandler() {
   let userName = document.getElementById("user-name").value;
@@ -177,8 +364,28 @@ function navigateToContact() {
   contactSection.scrollIntoView();
 }
 
-function challengeActivater(){
-  window.open('https://github.com/nikhilsaiankilla/30Days30Projects')
+function challengeActivater() {
+  window.open("https://github.com/nikhilsaiankilla/30Days30Projects");
+}
+
+function time() {
+  let a = 0;
+  let timeInterval = setInterval(() => {
+    a += Math.floor(Math.random() * 15);
+    if (a < 100) {
+      document.querySelector("#loader-value").innerHTML = a + "%";
+    } else {
+      document.querySelector("#loader-value").innerHTML = 100 + "%";
+      clearInterval(timeInterval);
+      setTimeout(() => {
+        document.querySelector("#greeting").style.display = "none";
+        document.querySelector("#loader-value").style.display = "none";
+      }, 400);
+    }
+  }, 150);
+  setTimeout(() => {
+    document.querySelector("#pre-loader").style.display = "none";
+  }, 7000);
 }
 
 // Executes On Form Submit
@@ -368,7 +575,7 @@ projectsData.forEach((project) => {
   projectImageCard.appendChild(projectImg);
 
   projectCard.appendChild(projectImageCard);
-  projectCard.appendChild(projectDetailsCard)
+  projectCard.appendChild(projectDetailsCard);
   projectsContainer.appendChild(projectCard);
 });
 // Events

@@ -26,12 +26,23 @@
     <title>Nikhil Sai Portfolio</title>
   </head>
   <body>
-    <div id="loader-screen" class="loader-screen">
-      <span class="loader"></span>
-      <h4>
-        Namaste
-        <img src="./Assests/Images/namaste.png" class="namaste-img" alt="" />
-      </h4>
+    <div id="pre-loader">
+      <div id="greeting">
+        <span>N</span>
+        <span>A</span>
+        <span>M</span>
+        <span>A</span>
+        <span>S</span>
+        <span>T</span>
+        <span>A</span>
+        <img src="./Assests/Images/namaste.png" alt="" />
+      </div>
+      <h1 id="loader-value"></h1>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
     </div>
     <div id="cursor">
       <div id="inner-cursor"></div>
@@ -82,7 +93,7 @@
       </nav>
       <section id="hero-section" class="hero-section">
         <div>
-          <h5>
+          <h5 class="hero-greeting">
             Namaste
             <img
               src="./Assests/Images/namaste.png"
@@ -91,8 +102,8 @@
             />
             I'm a
           </h5>
-          <h2>front-end</h2>
-          <h2>developer</h2>
+          <h2 class="first-hero-text">front-end</h2>
+          <h2 class="second-hero-text">developer</h2>
         </div>
         <img src="./Assests/Images/dev-1.png" alt="" class="hero-img" />
       </section>
@@ -167,7 +178,7 @@
           </div> -->
         </div>
       </section>
-      <section id="challanges-section" class="challenges-section padding">
+      <section id="challenges-section" class="challenges-section padding">
         <h2 class="section-title">challenges..!</h2>
         <div class="challenges-container">
           <div class="left-challenges">
@@ -201,7 +212,7 @@
         <!-- <img src="./Assests/Images/paperPlane.png" id="contact-img" alt=""> -->
         <img src="./Assests/Images/paperPlane.png" id="contact-img-2" alt="" />
         <h2 class="section-title">contact me</h2>
-        <form name="submit-to-google-sheet">
+        <form name="submit-to-google-sheet" id="contact-form">
           <input
             type="text"
             name="user-name"
