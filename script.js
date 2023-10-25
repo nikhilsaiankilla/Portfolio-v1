@@ -470,21 +470,28 @@ let skillsData = [
 // Storing Projects Data Dynamically
 let projectsData = [
   {
-    id: 0,
+    id: 'p6',
+    projectImg: "./Assests/Images/ProjectImages/gpt-3.png",
+    projectName: "GPT-3 (React JS)",
+    projectLiveLink: "https://gpt-3-react-js.vercel.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/GPT-3-ReactJS-",
+  },
+  {
+    id: 'p1',
     projectImg: "./Assests/Images/ProjectImages/portfolio.png",
     projectName: "my portfolio",
     projectLiveLink: "https://nikhilsaiportfolio.netlify.app/",
     projectGithubLink: "https://github.com/nikhilsaiankilla/Portfolio-v1",
   },
   {
-    id: 1,
+    id: 'p2',
     projectImg: "./Assests/Images/ProjectImages/twogood.png",
     projectName: "two good website",
     projectLiveLink: "https://twogood.netlify.app/",
     projectGithubLink: "https://github.com/nikhilsaiankilla/twogoodproject",
   },
   {
-    id: 2,
+    id: 'p3',
     projectImg: "./Assests/Images/ProjectImages/shoestore.png",
     projectName: "Nike Shoe store",
     projectLiveLink: "https://shoestoreclone.netlify.app/",
@@ -492,14 +499,14 @@ let projectsData = [
       "https://github.com/nikhilsaiankilla/Nike-Ecommerce-Website",
   },
   {
-    id: 3,
+    id: 'p4',
     projectImg: "./Assests/Images/ProjectImages/mirinda.png",
     projectName: "mirianda clone",
     projectLiveLink: "https://mirandaclonebynikhil.netlify.app/",
     projectGithubLink: "https://github.com/nikhilsaiankilla/miranda-clone",
   },
   {
-    id: 4,
+    id: 'p5',
     projectImg: "./Assests/Images/ProjectImages/project4.png",
     projectName: "DUO",
     projectLiveLink: "https://duobynikhil.netlify.app/",
