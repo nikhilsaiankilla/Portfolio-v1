@@ -603,6 +603,9 @@ button {
   margin-bottom: 2vw;
 }
 
+.icons a {
+  text-decoration: none;
+}
 .icon i {
   font-size: 2vw;
   color: var(--black-color);
