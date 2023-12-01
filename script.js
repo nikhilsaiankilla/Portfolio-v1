@@ -470,6 +470,13 @@ let skillsData = [
 // Storing Projects Data Dynamically
 let projectsData = [
   {
+    id: 'p7',
+    projectImg: "./Assests/Images/ProjectImages/spotifyclone.png",
+    projectName: "Spotify Clone ",
+    projectLiveLink: "https://spotifyclone-nikhil.vercel.app/",
+    projectGithubLink: "https://github.com/nikhilsaiankilla/SpotifyCloneReact",
+  },
+  {
     id: 'p6',
     projectImg: "./Assests/Images/ProjectImages/gpt-3.png",
     projectName: "GPT-3 (React JS)",
